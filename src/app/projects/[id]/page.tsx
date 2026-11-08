@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head"; // Import Head for dynamic title
 import Image from "next/image";
 import { FaExternalLinkAlt, FaGithub, FaServer } from "react-icons/fa";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiMongodb, SiExpress, SiFirebase } from "react-icons/si";
@@ -41,18 +40,6 @@ async function SingleProject({ params }: { params: Promise<{ id: string }> }) {
 
     return (
         <>
-            {/* ✅ SEO Optimized Dynamic Title */}
-            <Head>
-                <title>{project?.title ? `${project.title} | My Portfolio` : "Project Details"}</title>
-                <meta name="description" content={project?.description || "Project details and features"} />
-                <meta name="keywords" content="React, Next.js, Web Development, Projects" />
-                <meta name="author" content="Joy Chandra Uday" />
-                <meta property="og:title" content={project?.title || "Project Details"} />
-                <meta property="og:description" content={project?.description || "Explore project features and technologies"} />
-                <meta property="og:image" content={project?.coverImage || "/default-image.jpg"} />
-                <meta property="og:type" content="website" />
-            </Head>
-
             <div className="w-[95%] mx-auto p-6 grid grid-cols-1 py-12 md:grid-cols-2 gap-8">
                 {/* Left Column */}
                 <div className="flex flex-col items-center text-left space-y-4">
